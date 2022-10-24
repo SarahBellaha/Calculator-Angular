@@ -1,0 +1,31 @@
+<div class="calculator-body">
+  <div class="result">{{ result }}</div>
+  <div class="top-row">
+    <button class="orange" (click)="reset()">AC</button>
+    <button class="orange">%</button>
+    <button class="orange" (click)="getOperator('/')">/</button>
+  </div>
+  <div class="middle-row">
+    <button class="grey" (click)="getValue(9)">9</button>
+    <button class="grey" (click)="getValue(8)">8</button>
+    <button class="grey" (click)="getValue(7)">7</button>
+    <button class="orange" (click)="getOperator('*')">X</button>
+  </div>
+  <div class="middle-row">
+    <button class="grey" (click)="getValue(4)">4</button>
+    <button class="grey" (click)="getValue(5)">5</button>
+    <button class="grey" (click)="getValue(6)">6</button>
+    <button class="orange" (click)="getOperator('-')">-</button>
+  </div>
+  <div class="middle-row">
+    <button class="grey" (click)="getValue(1)">1</button>
+    <button class="grey" (click)="getValue(2)">2</button>
+    <button class="grey" (click)="getValue(3)">3</button>
+    <button class="orange" (click)="getOperator('+')">+</button>
+  </div>
+  <div class="bottom-row">
+    <button class="grey-large" (click)="getValue(0)">0</button>
+    <button class="grey" (click)="getValue('.')">.</button>
+    <button class="orange" (click)="displayValue()">=</button>
+  </div>
+</div>
