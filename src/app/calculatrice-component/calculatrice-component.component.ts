@@ -40,13 +40,24 @@ export class CalculatriceComponentComponent implements OnInit {
 
       case "*":
         this.result = Number(this.firstValue.join("")) * Number(this.secondValue.join(""));
-      break;
+      break;        
+    }
+  }
 
-      // case "%":
-      //   if(this.operator !== null) {
-      //     this.result = Number(this.firstValue.join("")) * Number(this.secondValue.join(""));
-      //   }
-        
+  percentage(): void{
+    if(this.operator !== null) {
+      if(this.operator === "+" || this.operator === "-") {
+        const percentage: number = Number(this.firstValue.join("")) * (Number(this.secondValue.join("")) / 100);
+        this.secondValue = [percentage];
+        this.displayValue();
+      } else {
+        const percentage: number = Number(this.secondValue.join("")) / 100;
+        this.secondValue = [percentage];
+        this.displayValue();
+      }
+      
+    } else {
+      this.reset();
     }
   }
 
@@ -66,5 +77,7 @@ export class CalculatriceComponentComponent implements OnInit {
 
   displayValue(): void {
     this.calculate();
+    this.firstValue = [this.result];
+    this.secondValue = [];
   }
 }
